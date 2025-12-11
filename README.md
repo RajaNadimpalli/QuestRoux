@@ -35,7 +35,7 @@ Users can track **one quest at a time**, which:
 
 ---
 
-### **🗺️ 3. Map View**
+### ** 3. Map View**
 A simplified interactive map showing:
 - Points of interest
 - Related quests
