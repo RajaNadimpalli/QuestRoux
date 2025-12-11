@@ -109,7 +109,7 @@ No frameworks. No backend.
 ---
 
 ##  Demo Video  
-(Only accessible within Northeastern University)
+(Only accessible within Northeastern University).
 https://northeastern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=967c1c8d-0807-48df-89a0-b3b000d154ec
 
 ---
