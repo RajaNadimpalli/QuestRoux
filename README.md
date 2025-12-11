@@ -103,5 +103,26 @@ No chatting—strictly guidance (aligned with HCI and AI principles).
 
 ---
 
-## 📂 Project Structure
+No frameworks. No backend.  
+100% client-side and deployable on GitHub Pages.
+
+---
+
+## 📹 Demo Video  
+
+
+---
+
+## 🧑‍💻 Author  
+**Raja Vara Siddi Varma Nadimpalli**  
+M.S. Artificial Intelligence – Northeastern University  
+Roux Institute, Portland, Maine  
+
+---
+
+## 📝 License  
+This is an academic prototype created for CS5170.  
+Not intended for production use.
+
+---
 
