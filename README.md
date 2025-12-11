@@ -10,7 +10,7 @@ This project focuses on **HCI-centered design**, **AI-supported decision guidanc
 ---
 
 ## 🚀 Live Demo  
-👉 **https://YOUR_USERNAME.github.io/questroux/**  
+👉 **https://RajaNadimpalli.github.io/QuestRoux/**  
 (Open on your phone for the full mobile app experience.)
 
 ---
