@@ -1,7 +1,5 @@
 # QuestRouX  
 ### A Gamified Campus Orientation Experience for the Roux Institute  
-**CS5170 – AI for Human–Computer Interaction**  
-**Final Project – Fall 2024**
 
 QuestRouX is a mobile-friendly web application that transforms campus orientation into an engaging, game-like experience. Through quests, journaling, photo memories, AI-supported recommendations, and light social features, the app helps new (especially international) students explore the Roux Institute campus with confidence and reflection.
 
