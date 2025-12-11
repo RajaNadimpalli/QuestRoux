@@ -1,0 +1,535 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f7fb;
+  color: #222;
+}
+
+/* SPLASH SCREEN */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #ffebe6, #820000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  animation: splashFade 2.2s forwards;
+}
+
+@keyframes splashFade {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.splash-content {
+  text-align: center;
+  color: #fff;
+}
+
+.splash-title {
+  font-size: 2.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.splash-subtitle {
+  margin-top: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.splash-icon {
+  font-size: 3rem;
+  margin: 12px 0;
+}
+
+.splash-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* HEADER */
+.app-header {
+  background: #820000;
+  color: #fff;
+  text-align: center;
+  padding: 14px 8px;
+}
+
+.app-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.tab-button.active {
+  font-weight: 600;
+  border-bottom: 3px solid #820000;
+}
+
+/* MAIN */
+main {
+  padding: 10px 16px 60px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+h2 {
+  margin-top: 8px;
+}
+
+/* HELPER TEXT */
+.helper-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-location {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eee;
+}
+
+.tag.completed {
+  background: #d3f9d8;
+  color: #135f32;
+}
+
+.tag.locked {
+  background: #ffe6e6;
+  color: #820000;
+}
+
+.tag.tracked {
+  background: #ffe680;
+  color: #7a5a00;
+}
+
+/* BUTTONS */
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.primary-btn {
+  background: #820000;
+  color: #fff;
+}
+
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.secondary-btn {
+  background: #f3f3f3;
+  color: #333;
+}
+
+/* GPS BOX */
+.gps-box {
+  background: #fff8e6;
+  border-left: 4px solid #ffbb33;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* TRACKED QUEST */
+.tracked-quest {
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #820000;
+  box-shadow: 0 0 12px rgba(130,0,0,0.25);
+  animation: trackedGlow 1.6s infinite alternate;
+}
+
+.tracked-quest.hidden {
+  display: none;
+}
+
+@keyframes trackedGlow {
+  from { box-shadow: 0 0 6px rgba(130,0,0,0.2); }
+  to { box-shadow: 0 0 14px rgba(130,0,0,0.4); }
+}
+
+/* MEMORY GRID */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.memory-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  border: 2px solid transparent;
+}
+
+.memory-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.memory-body {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+}
+
+.memory-caption {
+  font-weight: 600;
+}
+
+.memory-meta {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.memory-yearbook {
+  border-color: #ffcc00;
+}
+
+/* FRIEND LIST */
+.friend-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+}
+
+.friend-list li {
+  margin-bottom: 4px;
+}
+
+/* QUEST DETAIL OVERLAY */
+.quest-detail {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 80;
+}
+
+.quest-detail.hidden {
+  display: none;
+}
+
+.quest-detail-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px 12px;
+  max-width: 420px;
+  width: 92%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.ai-hint {
+  background: #f1f7ff;
+  border-left: 3px solid #3366ff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin: 10px 0;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* QR OVERLAY */
+.qr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+}
+
+.qr-overlay.hidden {
+  display: none;
+}
+
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.qr-frame {
+  width: 220px;
+  height: 220px;
+  border: 4px solid #fff;
+  animation: scanPulse 1.2s infinite alternate;
+  margin-bottom: 10px;
+}
+
+.qr-text {
+  font-size: 0.9rem;
+}
+
+@keyframes scanPulse {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* XP BAR & REWARDS */
+.xp-bar {
+  background: #e2e2e2;
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 0%;
+  background: #00a878;
+  transition: width 0.4s ease;
+}
+
+.progress-percent {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.8rem;
+}
+
+.activity-log {
+  list-style: none;
+  padding-left: 16px;
+  font-size: 0.85rem;
+}
+
+/* AI HELPER FLOATING BUTTON & PANEL */
+.ai-helper-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 76px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #ffcc00;
+  color: #820000;
+  font-weight: 800;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 95;
+  animation: helperBounce 1.6s infinite ease-in-out;
+}
+
+@keyframes helperBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.ai-helper-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 128px;
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  z-index: 96;
+}
+
+.ai-helper-panel.hidden {
+  display: none;
+}
+
+.ai-helper-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.ai-helper-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffcc00;
+  color: #820000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+.ai-helper-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.ai-helper-close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.ai-helper-body {
+  padding: 8px 10px 10px;
+  font-size: 0.85rem;
+}
+
+/* TOASTS */
+#toastContainer {
+  position: fixed;
+  bottom: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 97;
+}
+
+.toast {
+  background: #820000;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  animation: toastFade 2s ease;
+}
+
+@keyframes toastFade {
+  0% { opacity: 0; transform: translateY(18px); }
+  15% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* FOOTER */
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.8rem;
+}

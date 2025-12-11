@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuestRouX – Gamified Campus Orientation</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <!-- SPLASH SCREEN -->
+  <section id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <h1 class="splash-title">QuestRouX</h1>
+      <p class="splash-subtitle">Play your way into the Roux Institute.</p>
+      <div class="splash-icon">📍</div>
+      <p class="splash-note">AI-supported campus quests · CS5170 Prototype</p>
+    </div>
+  </section>
+
+  <!-- APP SHELL -->
+  <header class="app-header">
+    <h1>QuestRouX</h1>
+    <p class="app-subtitle">Gamified Campus Orientation for Roux Students</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-button active" data-view="questsView">Quests</button>
+    <button class="tab-button" data-view="mapView">Map</button>
+    <button class="tab-button" data-view="journalView">Journal</button>
+    <button class="tab-button" data-view="memoriesView">Memories</button>
+    <button class="tab-button" data-view="socialView">Social</button>
+    <button class="tab-button" data-view="rewardsView">Rewards</button>
+  </nav>
+
+  <main>
+    <!-- QUESTS VIEW -->
+    <section id="questsView" class="view active">
+      <h2>Quests</h2>
+      <p class="helper-text">
+        Complete quests to learn the campus, reflect on your experience, and build your own Roux story.
+      </p>
+
+      <section id="trackedQuestContainer" class="tracked-quest hidden">
+        <h3>Tracked Quest</h3>
+        <div id="trackedQuestCard"></div>
+      </section>
+
+      <h3>Available Quests</h3>
+      <div id="availableQuestList" class="cards"></div>
+
+      <h3>Completed Quests</h3>
+      <div id="completedQuestList" class="cards"></div>
+
+      <h3>Locked Quests</h3>
+      <div id="lockedQuestList" class="cards"></div>
+    </section>
+
+    <!-- MAP VIEW -->
+    <section id="mapView" class="view">
+      <h2>Map & Check-in</h2>
+      <div id="gpsStatus" class="gps-box">Attempting to read your GPS location…</div>
+      <p class="helper-text">
+        This is a simplified map representation. In a full app, these locations would appear as pins on a campus map with geofencing.
+      </p>
+      <div id="mapLocationList" class="cards"></div>
+    </section>
+
+    <!-- JOURNAL VIEW -->
+    <section id="journalView" class="view">
+      <h2>My Journal</h2>
+      <p class="helper-text">
+        Journal quests help you reflect on key moments, like meeting your advisor or discovering support services.
+      </p>
+      <div id="journalList" class="cards"></div>
+    </section>
+
+    <!-- MEMORIES VIEW -->
+    <section id="memoriesView" class="view">
+      <h2>Memories & Yearbook</h2>
+      <p class="helper-text">
+        Photo quests capture visual memories of your time on campus. The final yearbook quest creates a special highlight.
+      </p>
+      <div id="memoriesGrid" class="memory-grid"></div>
+    </section>
+
+    <!-- SOCIAL VIEW -->
+    <section id="socialView" class="view">
+      <h2>Fellow Explorers</h2>
+      <p class="helper-text">
+        This is a prototype of a social layer. Send a mock friend request to other explorers.
+      </p>
+
+      <div class="card">
+        <label for="friendName"><strong>Add a friend by full name</strong></label>
+        <input id="friendName" type="text" placeholder="e.g., Priya Sharma" />
+        <button id="sendFriendRequestBtn" class="primary-btn">Send friend request</button>
+      </div>
+
+      <h3>Friends (Sample)</h3>
+      <ul id="friendList" class="friend-list"></ul>
+    </section>
+
+    <!-- REWARDS VIEW -->
+    <section id="rewardsView" class="view">
+      <h2>Rewards & Progress</h2>
+
+      <div id="progressPercent" class="progress-percent"></div>
+
+      <div id="xpBarContainer">
+        <label>XP Progress</label>
+        <div class="xp-bar">
+          <div id="xpFill" class="xp-fill"></div>
+        </div>
+        <p id="xpLabel"></p>
+      </div>
+
+      <h3>Badges</h3>
+      <div id="badgeList" class="badges"></div>
+
+      <h3>Recent Activity</h3>
+      <ul id="activityLog" class="activity-log"></ul>
+    </section>
+
+    <!-- QUEST DETAIL OVERLAY -->
+    <section id="questDetailView" class="quest-detail hidden">
+      <div class="quest-detail-card">
+        <button id="closeDetail" class="close-button">✕</button>
+        <h2 id="detailTitle"></h2>
+        <p id="detailDescription"></p>
+        <p><strong>Type:</strong> <span id="detailType"></span></p>
+        <p><strong>Location:</strong> <span id="detailLocation"></span></p>
+        <p><strong>Reward:</strong> <span id="detailReward"></span> XP</p>
+        <p><strong>Status:</strong> <span id="detailStatus"></span></p>
+
+        <div class="ai-hint" id="detailHint"></div>
+
+        <div id="questDynamicContent"></div>
+
+        <div class="detail-actions">
+          <button id="trackQuestBtn" class="secondary-btn"></button>
+          <button id="completeQuestBtn" class="primary-btn"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR SCAN OVERLAY (SIMULATED) -->
+    <section id="qrOverlay" class="qr-overlay hidden">
+      <div class="qr-box">
+        <div class="qr-frame"></div>
+        <p class="qr-text">Simulated QR scanner…</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING AI HELPER BUTTON & PANEL -->
+  <button id="aiHelperButton" class="ai-helper-btn">!</button>
+  <div id="aiHelperPanel" class="ai-helper-panel hidden">
+    <div class="ai-helper-header">
+      <span class="ai-helper-icon">!</span>
+      <span class="ai-helper-title">AI Quest Guide</span>
+      <button id="closeAiHelper" class="ai-helper-close">✕</button>
+    </div>
+    <div id="aiHelperBody" class="ai-helper-body"></div>
+  </div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toastContainer"></div>
+
+  <footer class="app-footer">
+    <p>QuestRouX – CS5170 Final Project · Prototype</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
