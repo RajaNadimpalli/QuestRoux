@@ -7,15 +7,15 @@ This project focuses on **HCI-centered design**, **AI-supported decision guidanc
 
 ---
 
-## 🚀 Live Demo  
-👉 **https://RajaNadimpalli.github.io/QuestRoux/**  
+##  Live Demo  
+ **https://RajaNadimpalli.github.io/QuestRoux/**  
 (Open on your phone for the full mobile app experience.)
 
 ---
 
-## 🎒 Core Features
+##  Core Features
 
-### **🧭 1. Quest System (RPG-style)**
+### ** 1. Quest System (RPG-style)**
 - **Available**, **Completed**, and **Locked** quests  
 - Multiple quest types:
   - Location quests (QR/code-based)
@@ -27,7 +27,7 @@ This project focuses on **HCI-centered design**, **AI-supported decision guidanc
 
 ---
 
-### **📍 2. Tracked Quest System**
+### ** 2. Tracked Quest System**
 Users can track **one quest at a time**, which:
 - Appears **pinned** and visually highlighted
 - Shows a glowing effect
@@ -44,7 +44,7 @@ A simplified interactive map showing:
 
 ---
 
-### **📝 4. Journal System**
+### ** 4. Journal System**
 Journal quests let users reflect on:
 - Meeting an advisor  
 - First week experiences  
@@ -54,7 +54,7 @@ Entries appear in a dedicated Journal tab.
 
 ---
 
-### **📸 5. Photo Memories & Yearbook**
+### ** 5. Photo Memories & Yearbook**
 Photo quests allow users to capture:
 - Favorite campus spots
 - Selfies or visual reflections
@@ -64,13 +64,13 @@ The final quest unlocks a **gold-framed Yearbook entry**.
 
 ---
 
-### **🤝 6. Social Mock System**
+### ** 6. Social Mock System**
 Add “fellow explorers” using a name field.  
 Sends a simulated friend request (“Friend request sent to ___ 🎉”).
 
 ---
 
-### **🤖 7. Floating AI Helper**
+### ** 7. Floating AI Helper**
 A playful AI bubble (“!”) offers:
 - Smart quest recommendations  
 - Context-aware tips  
@@ -80,7 +80,7 @@ No chatting—strictly guidance (aligned with HCI and AI principles).
 
 ---
 
-## 🧱 Tech Stack
+##  Tech Stack
 
 - **HTML5** – App shell  
 - **CSS3** – Roux-inspired theme, Duolingo UI influence  
@@ -91,7 +91,7 @@ No chatting—strictly guidance (aligned with HCI and AI principles).
 
 ---
 
-## 📚 HCI / AI Concepts Demonstrated
+##  HCI / AI Concepts Demonstrated
 
 - Activity-centered design  
 - Scaffolding user learning through guided tasks  
@@ -108,19 +108,19 @@ No frameworks. No backend.
 
 ---
 
-## 📹 Demo Video  
+##  Demo Video  
 
 
 ---
 
-## 🧑‍💻 Author  
+##  Author  
 **Raja Vara Siddi Varma Nadimpalli**  
 M.S. Artificial Intelligence – Northeastern University  
 Roux Institute, Portland, Maine  
 
 ---
 
-## 📝 License  
+##  License  
 This is an academic prototype created for CS5170.  
 Not intended for production use.
 
